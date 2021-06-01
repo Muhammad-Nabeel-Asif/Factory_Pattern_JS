@@ -86,3 +86,52 @@ const white = new MyColor(255, 190, 189, "whitish");
 const red = new MyColor(255, 20, 36, "redish");
 
 //%%
+
+// "Extend" and "Super" keywords in Classes
+// ^^
+
+class Pet {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  eat() {
+    return `${this.name} is eating !`;
+  }
+}
+
+/*
+ "extends"
+1.The extends keyword is used to create a child class of another class (parent).
+2.The child class inherits all the methods from another class.
+3.Inheritance is useful for code reusability: reuse properties and methods of an existing class when you create a new class. 
+*/
+
+class Cat extends Pet {
+  constructor(name, age, livesLeft = 9) {
+    console.log("This will call pet constructor also alongside itself !");
+    // the "super" keyword below calls the constructor of class "Pet" , so there is no need for using "this" to relate with constructor objects like : , thats its purpose
+
+    /*
+    this.name = name;
+    this.age = age;
+    */
+
+    super(name, age);
+    this.livesLeft = livesLeft;
+  }
+  meow() {
+    return "MEEOOWWW !!";
+  }
+}
+
+class Dog extends Pet {
+  bark() {
+    return "WOOOOOF";
+  }
+  eat() {
+    return `${this.name} scarfs his food`;
+  }
+}
+
+// ^^
