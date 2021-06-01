@@ -61,3 +61,28 @@ const color2 = new Color(250, 150, 99);
 color2.hex();
 
 //$$
+
+//%%
+// Working with classes in js
+
+class MyColor {
+  constructor(r, g, b, name) {
+    this.r = r;
+    this.g = g;
+    this.b = b;
+    this.name = name;
+  }
+  rgb() {
+    const { r, g, b } = this;
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+  hex() {
+    const { r, g, b } = this;
+    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  }
+}
+
+const white = new MyColor(255, 190, 189, "whitish");
+const red = new MyColor(255, 20, 36, "redish");
+
+//%%
