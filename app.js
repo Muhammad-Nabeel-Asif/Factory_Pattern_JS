@@ -59,3 +59,5 @@ const color1 = new Color(40, 60, 80);
 color1.hex();
 const color2 = new Color(250, 150, 99);
 color2.hex();
+
+//$$
